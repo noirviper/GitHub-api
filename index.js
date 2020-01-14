@@ -8,7 +8,7 @@ const searchURL = 'https://api.github.com/users/';
 
 function displayResults(responseJson) {
   // if there are previous results, remove them
-  console.log(responseJson);
+  //console.log(responseJson);
   $('#results-list').empty();
   // iterate through the articles array, stopping at the max number of results
   for (let i = 0; i < responseJson.length; i++){
@@ -29,7 +29,7 @@ function displayResults(responseJson) {
 function getRepo(query) {
  const url = searchURL + query + "/repos";
 
-  console.log(url);
+ // console.log(url);
 
   let auth = btoa('noirviper' + ":" + 'f8464773b47d6f49284f40d31f822b08966a4da3')
 

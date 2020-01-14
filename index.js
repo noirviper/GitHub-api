@@ -19,7 +19,7 @@ function displayResults(responseJson) {
     $('#results-list').append(
       `<li>
       <p>REPO: ${responseJson[i].name}</p>
-      <p>LINK:<a href="${responseJson[i].owner.url}" target="_blank"></a></p>
+      <p>LINK:<a href="${responseJson[i].html_url}" target="_blank"> ${responseJson[i].html_url}</a></p>
       </li>`
     )};
   //display the results section  
@@ -31,10 +31,11 @@ function getRepo(query) {
 
   console.log(url);
 
-  
+  let auth = btoa('noirviper' + ":" + 'f8464773b47d6f49284f40d31f822b08966a4da3')
 
   const options = {
     headers: {
+      'Authorization': "Basic" + auth,
       'User-Agent':'request'}
   };
 
